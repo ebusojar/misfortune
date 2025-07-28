@@ -49,7 +49,8 @@ body {
   /* Use the main promotional image as the hero background.  
      We remove the images/ prefix because assets live in the repository root
      on GitHub. */
-  background-image: url('misfortune-promo.png');
+  /* Updated hero background to higher-resolution fire-hat image */
+  background-image: url('evan-fire-hat.jpg');
   background-size: cover;
   background-position: center;
   height: 80vh;
@@ -296,6 +297,20 @@ section p {
   max-width: 600px;
   border-radius: 6px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Lucky Callout */
+.lucky-callout {
+  text-align: center;
+  padding: 2rem 0;
+}
+.lucky-callout h2 {
+  font-family: 'Cinzel', serif;
+  font-style: italic;
+  color: var(--primary-color);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin: 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* References Section */
