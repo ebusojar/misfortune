@@ -1,0 +1,352 @@
+/*
+  Global Stylesheet for the Misfortune landing page
+
+  Colour palette:
+    --bg-color: primary dark background
+    --primary-color: gold accent used for buttons and highlights
+    --light-text: off‑white used for headings and body copy
+    --muted-text: grey used for supporting text and captions
+  Typography:
+    Cinzel for headings evokes classical engravings, Montserrat for clean body copy.
+*/
+
+:root {
+  --bg-color: #0b0b0f;
+  --primary-color: #d4af37;
+  --light-text: #f4f4f4;
+  --muted-text: #999999;
+  --transition-duration: 0.25s;
+  --container-width: 90%;
+  --max-width: 1200px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--light-text);
+  line-height: 1.6;
+}
+
+.container {
+  width: var(--container-width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background-image: url('images/smoke-background.png');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--light-text);
+}
+
+/* Dark overlay to improve contrast */
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.hero-content {
+  z-index: 1;
+}
+
+.show-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.tagline {
+  font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 3px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color var(--transition-duration), color var(--transition-duration), transform var(--transition-duration);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #1a1a1a;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #b7952b;
+  color: #0b0b0b;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--primary-color);
+  color: #1a1a1a;
+}
+
+/* Section generic styling */
+section {
+  padding: 4rem 0;
+}
+
+section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+section p {
+  margin-bottom: 1rem;
+  color: var(--light-text);
+}
+
+/* About Section */
+.about-section {
+  background-color: #121215;
+}
+
+.about-section a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+/* Tickets Section */
+.tickets-section {
+  background-color: #0f0f12;
+}
+
+.tickets-section .intro {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.shows-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.show-card {
+  border: 1px solid #1e1e24;
+  padding: 1.5rem;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #1a1a23;
+  transition: transform var(--transition-duration);
+}
+
+.show-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.show-card p {
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.show-card small {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--muted-text);
+  font-size: 0.8rem;
+}
+
+.show-card:hover {
+  transform: translateY(-4px);
+}
+
+.fine-print {
+  font-size: 0.8rem;
+  color: var(--muted-text);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* Teasers Section */
+.teasers-section {
+  background-color: #121215;
+  text-align: center;
+}
+
+.teasers-section .videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Venue Section */
+.venue-section {
+  background-color: #0f0f12;
+}
+
+.venue-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.venue-image {
+  flex: 1 1 40%;
+  max-width: 500px;
+}
+
+.venue-image img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+.venue-image figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--muted-text);
+}
+
+.venue-content {
+  flex: 1 1 55%;
+}
+
+.venue-content p + p {
+  margin-top: 1rem;
+}
+
+.venue-content a.btn {
+  margin-top: 1rem;
+}
+
+/* Poster Section */
+.poster-section {
+  background-color: #121215;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.poster-container img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 6px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* References Section */
+.references-section {
+  background-color: #0f0f12;
+  font-size: 0.9rem;
+}
+
+.references-section ol {
+  padding-left: 1.5rem;
+}
+
+.references-section li {
+  margin-bottom: 0.5rem;
+  color: var(--muted-text);
+}
+
+/* Footer */
+.site-footer {
+  background-color: #0b0b0f;
+  padding: 2rem 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--muted-text);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+  }
+  .venue-container {
+    flex-direction: column;
+  }
+  .venue-image,
+  .venue-content {
+    flex: 1 1 100%;
+    max-width: none;
+  }
+  .poster-container img {
+    max-width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .show-title {
+    font-size: 2.5rem;
+  }
+  .tagline {
+    font-size: 1rem;
+  }
+  .shows-grid {
+    grid-template-columns: 1fr;
+  }
+  .video-wrapper {
+    padding-bottom: 60%;
+  }
+}
